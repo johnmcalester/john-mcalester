@@ -7,6 +7,9 @@ function enqueue_styles_scripts() {
 	// Remember to comment out enqueueing of navigation.js in functions.php
 	// Note jquery listed as dependancy which prompts WP to load it
 	wp_enqueue_script( 'testtheme-navigation', get_template_directory_uri() . '/js/navigation-custom.js', array('jquery') );
+
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js' );
+	wp_enqueue_script( 'REM-unit-polyfill', get_template_directory_uri() . '/js/rem.js', false, false, true );
 } 
 
 add_action('wp_enqueue_scripts', 'enqueue_styles_scripts');
