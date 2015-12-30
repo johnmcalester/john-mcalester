@@ -1,9 +1,9 @@
 /*!
 Theme Name: McAlester
-Theme URI: http://underscores.me/
+Theme URI: https://github.com/johnmcalester/mcalester
 Author: John McAlester
 Author URI: https://github.com/johnmcalester
-Description: A custom theme by John McAlester
+Description: A custom Underscores based theme by John McAlester
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -834,6 +834,28 @@ h6 {
   .entry-meta a:hover, .entry-meta a:active {
     border-bottom: 1px dotted #fff; }
 
+.continue_btn {
+  text-align: center; }
+
+.entry-content a.more-link {
+  font-size: 1.125rem;
+  font-weight: 700;
+  display: inline-block;
+  padding: 1em 1.618em;
+  margin: 2em 0 0.5em 0;
+  background: none;
+  border-top: 0.1875rem solid #e8e1db;
+  border-bottom: 0.1875rem solid #e8e1db;
+  color: #7b6e62; }
+  .entry-content a.more-link:before {
+    font-family: "FontAwesome";
+    content: "\f0a4";
+    margin-right: 0.5em; }
+  .entry-content a.more-link:after {
+    font-family: "FontAwesome";
+    content: "\f0a5";
+    margin-left: 0.5em; }
+
 .entry-footer {
   text-align: center;
   margin: 2.61792rem 0 1.618rem 0;
@@ -915,6 +937,25 @@ h6 {
 input.search-field {
   box-sizing: border-box;
   width: 100%; }
+
+.aboveheader {
+  max-width: 72.4339rem;
+  margin: 0 auto;
+  text-align: right;
+  font-size: 1.25rem; }
+  .aboveheader a {
+    margin-right: 0.618em; }
+    .aboveheader a:link, .aboveheader a:visited {
+      opacity: 0.75; }
+    .aboveheader a:hover, .aboveheader a:active {
+      opacity: 1; }
+
+.abovecontent {
+  max-width: 72.4339rem;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 0.0625rem solid #DFD8CF;
+  box-shadow: 0 0.0625rem 0.0625rem rgba(33, 19, 4, 0.07); }
 
 .widget_recent_comments ul li:before {
   content: "\f075"; }
