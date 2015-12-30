@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 800; /* pixels */
 }
 
 if ( ! function_exists( 'my_theme_setup' ) ) :
@@ -71,7 +71,7 @@ function my_theme_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'my_theme_custom_background_args', array(
-		'default-color' => 'ffffff',
+		'default-color' => 'ebe8e5',
 		'default-image' => '',
 	) ) );
 }
