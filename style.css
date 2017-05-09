@@ -19,3 +19,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
+
+/**********
+This stylesheet is required by WordPress and only used for the comment block above.
+The stylesheet used for the site can be found in /css.
+**********/

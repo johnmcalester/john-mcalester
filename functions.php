@@ -83,6 +83,7 @@ add_action( 'after_setup_theme', 'my_theme_setup' );
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
+add_action( 'widgets_init', 'my_theme_widgets_init' );
 function my_theme_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'mcalester' ),
@@ -94,16 +95,14 @@ function my_theme_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 }
-add_action( 'widgets_init', 'my_theme_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
 function my_theme_scripts() {
-	wp_enqueue_style( 'main', get_stylesheet_uri().'css/main-min.css' );
+	wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.css' );
 
 	// wp_enqueue_script( 'my-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
 	wp_enqueue_script( 'my-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
