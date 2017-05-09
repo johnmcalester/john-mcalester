@@ -100,7 +100,7 @@ add_action( 'widgets_init', 'my_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function my_theme_scripts() {
-	wp_enqueue_style( 'my-theme-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'main', get_stylesheet_uri().'css/main-min.css' );
 
 	// wp_enqueue_script( 'my-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 

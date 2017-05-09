@@ -1,0 +1,24 @@
+{
+  "name": "mcalester",
+  "description": "Custom WordPress Theme Project",
+  "main": "index.js",
+  "authors": [
+    "John McAlester"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/johnmcalester/mcalester",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

@@ -1,0 +1,21 @@
+###
+#This file contains all files and directories which we do not want to version control in our repo
+###
+
+#OS files
+.DS_Store
+Thumbs.db
+
+#Src directory
+/src
+/src/**
+
+#NPM files
+#package.json
+/node_modules
+
+#Bower Components
+/bower_components
+
+#Gulp File
+#gulpfile.js
