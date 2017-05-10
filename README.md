@@ -30,7 +30,10 @@ McAlester includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 2.0 - May 9, 2017
+= 2.0 - May 9, 2017 =
+* Add Gulp Build, NPM, Bower
+* Rework stylesheets and markup to new design
+
 = 1.0 - May 12, 2015 =
 * Initial release
 
