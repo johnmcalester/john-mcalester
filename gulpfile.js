@@ -9,6 +9,7 @@ var cleanCSS = require('gulp-clean-css');
 // Require the file renaming plugin
 var rename = require("gulp-rename");
 
+
 // Process Sass files
 gulp.task('sass', function(){
   return gulp.src('src/sass/**/*.scss') // Get everything in the src/sass directory
