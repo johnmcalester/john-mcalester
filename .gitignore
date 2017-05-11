@@ -6,9 +6,8 @@
 .DS_Store
 Thumbs.db
 
-#Src directory
-/src
-/src/**
+#Dist directory
+/dist
 
 #NPM files
 #package.json

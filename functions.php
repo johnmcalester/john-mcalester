@@ -11,8 +11,8 @@
 if ( ! isset( $content_width ) ) {
 	$content_width = 800; /* pixels */
 }
-
-if ( ! function_exists( 'my_theme_setup' ) ) :
+add_action( 'after_setup_theme', 'jmc_theme_setup' );
+if ( ! function_exists( 'jmc_theme_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -20,7 +20,8 @@ if ( ! function_exists( 'my_theme_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function my_theme_setup() {
+
+function jmc_theme_setup() {
 
 	/*
 	 * Make theme available for translation.
@@ -70,21 +71,20 @@ function my_theme_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'my_theme_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'jmc_theme_custom_background_args', array(
 		'default-color' => 'ebe8e5',
 		'default-image' => '',
 	) ) );
 }
-endif; // my_theme_setup
-add_action( 'after_setup_theme', 'my_theme_setup' );
+endif; // jmc_theme_setup
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-add_action( 'widgets_init', 'my_theme_widgets_init' );
-function my_theme_widgets_init() {
+add_action( 'widgets_init', 'jmc_theme_widgets_init' );
+function jmc_theme_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'mcalester' ),
 		'id'            => 'sidebar-1',
@@ -99,17 +99,24 @@ function my_theme_widgets_init() {
 /**
  * Enqueue scripts and styles.
  */
-function my_theme_scripts() {
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.css' );
-
+add_action('wp_enqueue_scripts', 'jmc_enqueue_styles_scripts');
+function jmc_enqueue_styles_scripts() {
+	wp_enqueue_style('gfonts', '//fonts.googleapis.com/css?family=Raleway:300,400,700,900');
+	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+	wp_enqueue_style( 'main', get_template_directory_uri() . '/dist/css/main-min.css' );
+	
+	// Note jquery listed as dependancy which prompts WP to load it
+	wp_enqueue_script( 'testtheme-navigation', get_template_directory_uri() . '/src/js/navigation-custom.js', array('jquery') );
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/src/js/modernizr.js' );
+	wp_enqueue_script( 'REM-unit-polyfill', get_template_directory_uri() . '/src/js/rem.js', false, false, true );
+	// Remember to comment out enqueueing of navigation.js in functions.php
 	// wp_enqueue_script( 'my-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-	wp_enqueue_script( 'my-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'my-theme-skip-link-focus-fix', get_template_directory_uri() . '/src/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -136,7 +143,38 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-/**
- * Load custom functions.
- */
-require get_template_directory() . '/custom_functions.php';
+
+// Activate support for featured images
+add_theme_support( 'post-thumbnails' );
+
+// Set the post thumbnail default size to suit the theme layout
+set_post_thumbnail_size( 811, 456, true );
+
+// Add a div wrapper around the "Continue Reading" button
+// From https://tommcfarlin.com/more-tag-wrapper/
+add_action( 'the_content_more_link', 'add_continue_wrapper', 10, 2 );
+function add_continue_wrapper( $link, $text ) {
+	$html = '<div class="continue_btn">' . $link . '</div>';
+	return $html;
+}
+
+// Register custom widget locations
+register_sidebar(
+	array(
+		'name' => __("Above Header", "mcalester"),
+		'id' => 'aboveheader',
+		'description' => 'Above header and menu, right aligned, use for social icons',
+		'before_widget' => "<div class='aboveheader'>",
+		'after_widget' => "</div>"
+	)
+);
+
+register_sidebar(
+	array(
+		'name' => __("Above Content Area", "mcalester"),
+		'id' => 'abovecontent',
+		'description' => 'Front page only, use for sliders',
+		'before_widget' => "<div class='abovecontent'>",
+		'after_widget' => "</div>"
+	)
+);
