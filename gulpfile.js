@@ -11,8 +11,8 @@ var cleanCSS = require('gulp-clean-css');
 // Require the file renaming plugin
 var rename = require("gulp-rename");
 
-// Process Sass files
-gulp.task('sass', function(){
+// Process Css files
+gulp.task('css', function(){
   // Get everything in the src/sass directory
   return gulp.src('src/sass/**/*.scss')
     // Using gulp-sass
@@ -29,14 +29,14 @@ gulp.task('sass', function(){
     .pipe(gulp.dest('./dist/css'))
 });
 
-// Watch files for changes
+// Watch our source files for changes
 gulp.task('watch', function(){
   // Watch for changes in the Sass folder
-  gulp.watch('src/sass/**/*.scss', ['sass']);
+  gulp.watch('src/sass/**/*.scss', ['css']);
 });
 
 // Add tasks to the deafult Gulp task
 gulp.task('default', function (callback) {
   // Do our tasks in the correct order so we don't miss anything
-  runSequence(['sass','watch'],callback);
+  runSequence(['css','watch'],callback);
 });
