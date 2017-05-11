@@ -17,7 +17,16 @@
   },
   "homepage": "https://github.com/johnmcalester/mcalester#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.2.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "run-sequence": "^1.2.2"
+    "gulp-sourcemaps": "^2.6.0",
+    "run-sequence": "^1.2.2",
+    "source-map": "^0.5.6",
+    "vinyl-sourcemaps-apply": "^0.2.1"
+  },
+  "dependencies": {
+    "bower": "^1.8.0"
   }
 }
