@@ -15,7 +15,7 @@ $default_gutter: $phi * 1rem;
 $small_col: 0.3;
 
 
-// DEFAULT _S "STRUCTURE" VARS 
+// DEFAULT _S "STRUCTURE" VARS
 $size__site-main: 100%;
 $size__site-sidebar: percentage($small_col);
 // /end
@@ -107,7 +107,7 @@ $htag_vmargins: 0.563, 0.625, 1.313, 1.313, 1.313, 0.75;
 
 
 // DEFAULT _S "COLORS" VARS
-$color__background-body: #ebe8e5;
+$color__background-body: #ffffff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
@@ -132,11 +132,11 @@ $color__border-abbr: #666;
 
 // custom color variables
 
-$color__background-main_panel: #fff;
-$color__border-main_panel: #DFD8CF;
+$color__background-main_panel: #ffffff;
+$color__border-main_panel: #ffffff;
 
-$color__background-sub_panel: #ebe8e5;
-$color__border-sub_panel: #e8e0da;
+$color__background-sub_panel: #ffffff;
+$color__border-sub_panel: #ffffff;
 $color__text-sub_panel: #76624e;
 
 $color__entry_highlight: #7B6048;
