@@ -50,7 +50,7 @@ ul, ol {
 		width: 60%;
 
 		span {
-			background-color: #f7f7f7;
+			background-color: #ffffff;
 			padding: 0 20px;
 			position: relative;
 			top: -10px;
@@ -87,7 +87,7 @@ ul, ol {
 	max-width: total_site_width();
 	margin: $default_gutter/2 auto $default_gutter auto;
 
-	@include sub_panel();
+	// @include sub_panel();
 }
 
 .site-branding {
