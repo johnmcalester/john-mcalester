@@ -30,12 +30,6 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<!-- <h1 class="screen-reader-text">Main Navigation</h1> -->
-			<!-- <div class="navicon closed"><i class="fa fa-navicon"></i></div> -->
-			<?php //wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 2 ) ); ?>
-		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<?php

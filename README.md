@@ -1,4 +1,4 @@
-McAlester
+McAlester WordPress Theme
 ===
 
 
