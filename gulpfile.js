@@ -26,7 +26,7 @@ gulp.task('css', function(){
     // Rename our dist CSS with -min
     .pipe(rename("main-min.css"))
     // Put processed file in the correct directory
-    .pipe(gulp.dest('./dist/css'))
+    .pipe(gulp.dest('./css'))
 });
 
 // Watch our source files for changes
