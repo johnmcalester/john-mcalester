@@ -38,7 +38,6 @@ $widget_t_padding: $default_h_padding / $phi;
 $widget_b_padding: $widget_t_padding;
 
 
-
 @function total_site_width() {
 	// Figure out how many overall rems wide the posts should be, allowing for a readability optimized width on text plus left and right padding
 	$total_post_width_rem: $readable_width + $post_l_padding + $post_r_padding;
@@ -59,7 +58,7 @@ $widget_b_padding: $widget_t_padding;
 
 
 // DEFAULT _S "TYPOGRAPHY" VARS
-$font__main: Raleway, "Trebuchet MS","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Tahoma,sans-serif;
+$font__main: "Helvetica-Neue","Helvetica","Arial",sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: $phi*1em;
@@ -99,35 +98,31 @@ $htag_vmargins: 0.563, 0.625, 1.313, 1.313, 1.313, 0.75;
 	}
 }
 
-
-
 // **-----
 // COLORS
 // **-----
 
-
 // DEFAULT _S "COLORS" VARS
-$color__background-body: #ffffff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
+$color__background-body: #f7f7f7;
+$color__background-screen: #f7f7f7;
+$color__background-hr: #000000;
 $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
-$color__text-screen: #21759b;
+$color__text-screen: #000000;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: #7b6e62;
+$color__link: #666666;
 $color__link-visited: $color__link;
 $color__link-hover: $color__link;
-$color__text-main: #505050;
+$color__text-main: #000000;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
-
 // /end
 
 // custom color variables
@@ -137,7 +132,7 @@ $color__border-main_panel: #ffffff;
 
 $color__background-sub_panel: #ffffff;
 $color__border-sub_panel: #ffffff;
-$color__text-sub_panel: #76624e;
+$color__text-sub_panel: #000000;
 
 $color__entry_highlight: #7B6048;
 
@@ -150,11 +145,11 @@ $color__entry_highlight: #7B6048;
 
 @mixin links(){
 	a {
-		text-decoration: none;
-		border-bottom: 1px dotted transparent;
+		text-decoration: underline;
+		color: #666666;
 	}
 	a:hover, a:active {
-		border-bottom: 1px dotted $color__link;
+		color: #000000;
 	}
 }
 
@@ -235,7 +230,11 @@ $color__entry_highlight: #7B6048;
 
 @mixin site_footer(){
 	a {
-		color: darken($color__link, 5%);
+		color: #000000;
+	}
+
+	a:hover {
+		color: #666666;
 	}
 }
 

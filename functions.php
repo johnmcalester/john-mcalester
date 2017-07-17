@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 800; /* pixels */
+	$content_width = 1200; /* pixels */
 }
 add_action( 'after_setup_theme', 'jmc_theme_setup' );
 if ( ! function_exists( 'jmc_theme_setup' ) ) :
@@ -104,7 +104,7 @@ function jmc_enqueue_styles_scripts() {
 	wp_enqueue_style('gfonts', '//fonts.googleapis.com/css?family=Raleway:300,400,700,900');
 	wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/dist/css/main-min.css' );
-	
+
 	// Note jquery listed as dependancy which prompts WP to load it
 	wp_enqueue_script( 'testtheme-navigation', get_template_directory_uri() . '/src/js/navigation-custom.js', array('jquery') );
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/src/js/modernizr.js' );
@@ -142,7 +142,6 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
 
 // Activate support for featured images
 add_theme_support( 'post-thumbnails' );
