@@ -5,6 +5,9 @@ McAlester
 Cloning this Repository
 ---------------
 
+GitHub:
+https://github.com/johnmcalester/mcalester.git
+
 Downloading Dependencies
 ---------------
 
